@@ -6,4 +6,5 @@ En primer lugar se instaló el gestor de paquetes y administrador de entornos Mi
 $ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 $ bash Miniconda3-latest-Linux-x86_64.sh # Seguir las instrucciones y reiniciar la terminal
 ```
+Una vez instalado en el terminal aparecerá ```(base)```, lo cual indicará que ya se encuentra en el entorno de conda.
 
