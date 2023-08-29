@@ -1,2 +1,2 @@
-# Digital-1-2023-2
-Repositorio destinado a las prácticas del laboratorio de Digital I
+# Instalación de Linux Mint Cinnamon y de herramientas
+
