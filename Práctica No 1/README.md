@@ -16,3 +16,22 @@ Una vez instalado en el terminal aparecerá ```(base)```, lo cual indicará que 
 ```
 Una vez realizado este procedimiento se obtuvo lo siguiente:
 ![pantallazoConda](https://github.com/Daniel-Porras/Digital-1-2023-2/assets/73449036/13a16e5b-81c6-4fa3-816c-eb8fd802b72a)
+
+
+
+##Herramienta de simulación Digital
+### Máquina Virtual de Java
+Es necesario contar con una máquina virtual de Java para poder correr el programa de simulación. Antes de intentar instalar un [JDK](https://adoptium.net/), se debe revisar si el OS ya incorpora Java. Para confirmar esto es puede intentar alguno de los siguientes comandos: `java --version`o en su defecto `whereis java`.
+
+En caso de no contar con Java puede instalarse el JDK con algún gestor de paquetes, ejemplo: 
+```
+sudo apt install openjdk-11-jdk # > Si es una distribución basada en debian
+```
+### Instalación de Digital
+1. Descargar [Digital.zip](https://github.com/hneemann/Digital/releases/latest/download/Digital.zip) y descomprimirlo.
+
+![](https://github.com/Daniel-Porras/Digital-1-2023-2/blob/main/Pr%C3%A1ctica%20No%201/Screenshot%20from%202023-08-22%2016-35-32.png?raw=true)
+2. Se ejecuta el programa:
+![](https://github.com/Daniel-Porras/Digital-1-2023-2/blob/main/Pr%C3%A1ctica%20No%201/Screenshot%20from%202023-08-22%2016-35-53.png?raw=true)
+
+3. f
