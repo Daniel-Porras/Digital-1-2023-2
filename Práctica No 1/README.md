@@ -28,6 +28,7 @@ Una vez realizado este procedimiento se obtuvo lo siguiente:
 (digital) $ conda install -c "litex-hub" iverilog
 ```
 Para comprobar que la instalación se hizo de manera correcta se utilizó el siguiente comando ```(digital) $ conda list```
+![pantallazocondalist](https://github.com/Daniel-Porras/Digital-1-2023-2/assets/73449036/08caf719-8fff-461e-8d4e-759dff9e4407)
 
 ## Herramienta de simulación Digital
 ### Máquina Virtual de Java
