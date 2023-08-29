@@ -31,7 +31,9 @@ sudo apt install openjdk-11-jdk # > Si es una distribución basada en debian
 1. Descargar [Digital.zip](https://github.com/hneemann/Digital/releases/latest/download/Digital.zip) y descomprimirlo.
 
 ![](https://github.com/Daniel-Porras/Digital-1-2023-2/blob/main/Pr%C3%A1ctica%20No%201/Screenshot%20from%202023-08-22%2016-35-32.png?raw=true)
+
 2. Se ejecuta el programa:
+
 ![](https://github.com/Daniel-Porras/Digital-1-2023-2/blob/main/Pr%C3%A1ctica%20No%201/Screenshot%20from%202023-08-22%2016-35-53.png?raw=true)
 
-3. f
+4. f
