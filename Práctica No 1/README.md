@@ -32,7 +32,7 @@ sudo apt install openjdk-11-jdk # > Si es una distribución basada en debian
 
 ![Screenshot from 2023-08-22 16-35-32](https://github.com/Daniel-Porras/Digital-1-2023-2/assets/142681600/01333450-7e50-471f-ba18-07f296bd16f5)
 
-2. Se ejecuta el programa mediante la terminal abierta en la capeta descomprimida:
+2. Se ejecuta el programa mediante la terminal abierta en la capeta descomprimida: el comando es `java -jar Digital.jar`
 
 ![Screenshot from 2023-08-22 16-35-53](https://github.com/Daniel-Porras/Digital-1-2023-2/assets/142681600/4dcc4c10-0406-42a0-b014-252029cbcf47)
 
