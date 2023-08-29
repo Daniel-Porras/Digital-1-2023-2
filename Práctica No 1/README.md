@@ -17,7 +17,7 @@ Una vez instalado en el terminal aparecerá ```(base)```, lo cual indicará que 
 Una vez realizado este procedimiento se obtuvo lo siguiente:
 ![pantallazoConda](https://github.com/Daniel-Porras/Digital-1-2023-2/assets/73449036/13a16e5b-81c6-4fa3-816c-eb8fd802b72a)
 
-> Para activar o desactivar el entorno **digital** se hacen uso de los siguiente comandos respectivamente ```$ conda activate digital``` y ```$ conda activate ``` 
+> Para activar o desactivar el entorno **digital** se hacen uso de los siguiente comandos respectivamente: ```$ conda activate digital``` y ```$ conda desactivate ``` 
 
 ## Herramienta de simulación Digital
 ### Máquina Virtual de Java
