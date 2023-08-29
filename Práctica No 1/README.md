@@ -30,7 +30,7 @@ sudo apt install openjdk-11-jdk # > Si es una distribución basada en debian
 ### Instalación de Digital
 1. Descargar [Digital.zip](https://github.com/hneemann/Digital/releases/latest/download/Digital.zip) y descomprimirlo.
 
-![](https://github.com/Daniel-Porras/Digital-1-2023-2/blob/main/Pr%C3%A1ctica%20No%201/Screenshot%20from%202023-08-22%2016-35-32.png?raw=true)
+![Screenshot from 2023-08-22 16-35-32](https://github.com/Daniel-Porras/Digital-1-2023-2/assets/142681600/01333450-7e50-471f-ba18-07f296bd16f5)
 
 2. Se ejecuta el programa:
 
