@@ -45,7 +45,7 @@ sudo apt install openjdk-11-jdk # > Si es una distribución basada en debian
 
 ![Screenshot from 2023-08-22 16-35-53](https://github.com/Daniel-Porras/Digital-1-2023-2/assets/142681600/4dcc4c10-0406-42a0-b014-252029cbcf47)
 
-3.  2
+3. Para isnstalar Digital y encontrar la aplicación en el menú se ejecuta `./install.sh` en el directorio donde se encuentra Digital.jar. (el directorio descomprimido en pasos anteriores)
 
 ![Screenshot from 2023-08-28 21-43-36](https://github.com/Daniel-Porras/Digital-1-2023-2/assets/142681600/6fefbf60-c0cb-47d2-bff0-95fbf6269fb7)
 
