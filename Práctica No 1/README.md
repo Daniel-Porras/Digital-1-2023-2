@@ -17,6 +17,8 @@ Una vez instalado en el terminal aparecerá ```(base)```, lo cual indicará que 
 Una vez realizado este procedimiento se obtuvo lo siguiente:
 ![pantallazoConda](https://github.com/Daniel-Porras/Digital-1-2023-2/assets/73449036/13a16e5b-81c6-4fa3-816c-eb8fd802b72a)
 
+> Para activar o desactivar el entorno **digital** se hacen uso de los siguiente comandos respectivamente ```conda activate digital``` y ```conda activate ``` 
+
 ## Herramienta de simulación Digital
 ### Máquina Virtual de Java
 Es necesario contar con una máquina virtual de Java para poder correr el programa de simulación. Antes de intentar instalar un [JDK](https://adoptium.net/), se debe revisar si el OS ya incorpora Java. Para confirmar esto es puede intentar alguno de los siguientes comandos: `java --version`o en su defecto `whereis java`.
