@@ -1,2 +1,1 @@
-# Instalación de Linux Mint Cinnamon y de herramientas
-
+# Instalación de herramientas en Linux Mint Cinnamon
