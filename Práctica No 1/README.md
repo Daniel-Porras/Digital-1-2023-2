@@ -27,6 +27,7 @@ Una vez realizado este procedimiento se obtuvo lo siguiente:
 (digital) $ conda install -c "litex-hub" yosys
 (digital) $ conda install -c "litex-hub" iverilog
 ```
+Para comprobar que la instalación se hizo de manera correcta se utilizó el siguiente comando ```(digital) $ conda list```
 
 ## Herramienta de simulación Digital
 ### Máquina Virtual de Java
