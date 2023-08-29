@@ -34,4 +34,6 @@ sudo apt install openjdk-11-jdk # > Si es una distribución basada en debian
 
 ![](https://github.com/Daniel-Porras/Digital-1-2023-2/blob/main/Pr%C3%A1ctica%20No%201/Screenshot%20from%202023-08-22%2016-35-53.png?raw=true)
 
-4. f
+3.  2
+![Screenshot from 2023-08-28 21-43-36](https://github.com/Daniel-Porras/Digital-1-2023-2/assets/142681600/6fefbf60-c0cb-47d2-bff0-95fbf6269fb7)
+
