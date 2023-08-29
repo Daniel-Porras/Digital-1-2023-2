@@ -8,3 +8,9 @@ $ bash Miniconda3-latest-Linux-x86_64.sh # Seguir las instrucciones y reiniciar 
 ```
 Una vez instalado en el terminal aparecerá ```(base)```, lo cual indicará que ya se encuentra en el entorno de conda.
 
+```
+(base) $ conda update conda 
+(base) $ conda create -n digital python=3.10 
+(base) $ conda activate digital  
+(digital) $ python --version 
+```
