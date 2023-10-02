@@ -104,21 +104,28 @@ Con el comando ```gtkwave top.vcd``` se visualizaron las formas de onda en gtkwa
 
 * **SUMA SIN DESBORDAR**
 
-En el caso que se tiene una suma y el valor de esta no supera 15, el valor completo se encontrará en *out_s* y el carrier *out_co* de salida será 0.
+En el caso que se tiene una suma y el valor de esta no supera 15, el valor completo se encontrará en *out_s* y el carrier *out_co* de salida será cero.
 
 ![sumaSinDesbordar](https://github.com/Daniel-Porras/Digital-1-2023-2/assets/73449036/1be329e4-7368-4936-b88b-2b30eaac2fb8)
 
 * **SUMA DESBORDADA**
 
 
-Si el resultado de la suma supera el 15, el bit más significativo se encontrará en el carrie de salida
+Si el resultado de la suma supera el 15, el bit más significativo se encontrará en el carrie de salida.
+
 ![sumador_restador_4bits](https://github.com/Daniel-Porras/Digital-1-2023-2/assets/73449036/5618dbf2-8677-4d13-b1af-3676885d3c8e)
 
 * **RESTA CON RESULTADO POSITIVO**
 
+
+Si el resultado de la resta es positivo el carrie de salida será igual a 1.
+
 ![RestaPositivo](https://github.com/Daniel-Porras/Digital-1-2023-2/assets/73449036/8264f609-83b5-4c6b-abc3-12dc4bfbb1e9)
 
 * **RESTA CON RESULTADO NEGATIVO**
+
+
+Si el resultado de la resta es negativo el carrie de salida será igual a 0 y el valor de *out_s* estará en complemento a dos.
 
 ![RestaNegativo](https://github.com/Daniel-Porras/Digital-1-2023-2/assets/73449036/29b82bd5-ff71-40f7-abed-5cf41b02b487)
 
