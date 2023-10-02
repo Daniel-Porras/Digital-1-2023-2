@@ -91,9 +91,17 @@ endmodule
 ```
 ## Simulación
 Se escribió el siguiente comando para revisar que no hubiera ningún error en el código y crear el archivo *top.vvp*
+
 ![Captura de pantalla de 2023-10-02 18-01-45](https://github.com/Daniel-Porras/Digital-1-2023-2/assets/73449036/38d4ce95-b83f-440b-9d0d-81d6b2eef6b2)
+
 Se inició la simulación y se generaron los resultados
+
 ![Captura de pantalla de 2023-10-02 18-07-21](https://github.com/Daniel-Porras/Digital-1-2023-2/assets/73449036/cda7737b-5a4b-49e0-baea-d5a867eb8015)
+
 Con el comando ```gtkwave top.vcd``` se visualizaron las formas de onda en gtkwave
+
 ![sumador_restador_4bits](https://github.com/Daniel-Porras/Digital-1-2023-2/assets/73449036/2af56c52-1564-494a-af5c-11335cf0134c)
+
+Además se obtuvo el rtl del archivo con ```make rtl  TOP=adder_four_bits MODULES=fulladder.v```
+![adder_four_bits](https://github.com/Daniel-Porras/Digital-1-2023-2/assets/73449036/e322145f-bc0e-4f79-ae8c-816d47da25b6)
 
