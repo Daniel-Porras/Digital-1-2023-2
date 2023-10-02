@@ -1,7 +1,8 @@
 # Sumador-Restador de 4 bits
-A continuación se vera el procedimiento para crear un sumador-restador de cuatro bits utlizando Verilog [lab2.zip](https://github.com/Daniel-Porras/Digital-1-2023-2/files/12787256/lab2.zip)
-
+A continuación se vera el procedimiento para crear un sumador-restador de cuatro bits utlizando Verilog. 
 ![Sumador-Restador](https://github.com/Daniel-Porras/Digital-1-2023-2/assets/73449036/a99eeb3c-f7d8-483d-bbb0-72c154af0948)
+[lab2.zip](https://github.com/Daniel-Porras/Digital-1-2023-2/files/12787256/lab2.zip)
+
 ## Creación del módulo
 Se crea el módulo del sumador-restador, teniendo como entradas dos números de 4 bits y un carrier de entrada que ayudará a seleccionar si se quire realizar una suma o resta. Por otra parte las salidas de este módulo es un resultado de la operación la cual es un número de 4 bits y también se tiene un carrier de salida:
 
