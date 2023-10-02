@@ -14,7 +14,7 @@ module adder_four_bits (
   output [3:0] out_s
 );
 ```
-
+Se realizó la conexión en cascada de 4 fulladers
 
 ```systemverilog
 // Declaración de cables
@@ -32,3 +32,4 @@ fulladder fulladder4(in_ci^int_b[3],int_a[3],co3,out_co,out_s[3]);
 
 endmodule
 ```
+Si se quiere realizar una **suma** (A+B) el carrier de entrada ```in_ci```, tiene que ser igual y cero. Y para el caso de la **resta** (A-B) el carrier de entrada tiene que ser uno.
