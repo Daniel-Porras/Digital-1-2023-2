@@ -33,3 +33,16 @@ fulladder fulladder4(in_ci^int_b[3],int_a[3],co3,out_co,out_s[3]);
 endmodule
 ```
 Si se quiere realizar una **suma** (A+B) el carrier de entrada ```in_ci```, tiene que ser igual y cero. Y para el caso de la **resta** (A-B) el carrier de entrada tiene que ser uno.
+Debido a que si se quiere realizar una resta se debe sacar el complemento a dos de la entrada b, lo cual consiste en negar el número y sumarle 1. Para esto se utilzo una compuerta XOR ya que si el carrie de entrada es cero no modifica el valor de b y cuando este tiene un calor de uno niega el valor.
+<div align="center">
+
+| b[n]     | in_ci    | b[n] ^ in_ci |
+|:----------:|:----------:|:----------:|
+|  0         | 0          |   0      |
+|  1         | 0          |   1      |
+|  0         | 1          |   1      |
+|  1         | 1          |   0      |
+
+</div>
+
+## Modificación del test bench
