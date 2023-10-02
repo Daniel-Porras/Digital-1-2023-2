@@ -46,3 +46,46 @@ Debido a que si se quiere realizar una resta se debe sacar el complemento a dos 
 </div>
 
 ## Modificación del test bench
+```systemverilog
+module testbech;
+// Entradas 
+reg [3:0] inputA;
+reg [3:0] inputB;
+reg cint;
+// Variables para la iteración
+integer i;
+integer e;
+integer q;
+
+initial
+ begin
+  for (q=0; q<2; q=q+1)
+  begin
+   cint=q;
+   for (i=0; i<16; i=i+1)
+   begin
+    inputA = i;
+    for (e=0; e<16; e=e+1)
+    begin
+     inputB = e;
+     #1;
+    end
+   end	
+  end	
+ end
+
+// Salidas
+wire [3:0] outs;
+wire out_co;
+// DEVICE/DESIGN UNDER TEST
+adder_four_bits dut (
+    .int_b(inputB), .int_a(inputA), .in_ci(cint),
+    .out_co(out_co), .out_s(outs[3:0])
+  );
+initial
+begin
+    $dumpfile("top.vcd");
+    $dumpvars(0, testbech);
+end
+endmodule
+```
