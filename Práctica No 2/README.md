@@ -98,9 +98,29 @@ Se inició la simulación y se generaron los resultados
 
 ![Captura de pantalla de 2023-10-02 18-07-21](https://github.com/Daniel-Porras/Digital-1-2023-2/assets/73449036/cda7737b-5a4b-49e0-baea-d5a867eb8015)
 
-Con el comando ```gtkwave top.vcd``` se visualizaron las formas de onda en gtkwave
+### Gtkwave
 
-![sumador_restador_4bits](https://github.com/Daniel-Porras/Digital-1-2023-2/assets/73449036/2af56c52-1564-494a-af5c-11335cf0134c)
+Con el comando ```gtkwave top.vcd``` se visualizaron las formas de onda en gtkwave:
+
+* **SUMA SIN DESBORDAR**
+
+En el caso que se tiene una suma y el valor de esta no supera 15, el valor completo se encontrará en *out_s* y el carrier *out_co* de salida será 0.
+
+![sumaSinDesbordar](https://github.com/Daniel-Porras/Digital-1-2023-2/assets/73449036/1be329e4-7368-4936-b88b-2b30eaac2fb8)
+
+* **SUMA DESBORDADA**
+
+
+Si el resultado de la suma supera el 15, el bit más significativo se encontrará en el carrie de salida
+![sumador_restador_4bits](https://github.com/Daniel-Porras/Digital-1-2023-2/assets/73449036/5618dbf2-8677-4d13-b1af-3676885d3c8e)
+
+* **RESTA CON RESULTADO POSITIVO**
+
+![RestaPositivo](https://github.com/Daniel-Porras/Digital-1-2023-2/assets/73449036/8264f609-83b5-4c6b-abc3-12dc4bfbb1e9)
+
+* **RESTA CON RESULTADO NEGATIVO**
+
+![RestaNegativo](https://github.com/Daniel-Porras/Digital-1-2023-2/assets/73449036/29b82bd5-ff71-40f7-abed-5cf41b02b487)
 
 Además se obtuvo el rtl del archivo con ```make rtl  TOP=adder_four_bits MODULES=fulladder.v```
 ![adder_four_bits](https://github.com/Daniel-Porras/Digital-1-2023-2/assets/73449036/e322145f-bc0e-4f79-ae8c-816d47da25b6)
