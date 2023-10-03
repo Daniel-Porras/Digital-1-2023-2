@@ -91,6 +91,10 @@ begin
 end
 endmodule
 ```
+## Comprobación con Digital
+![WhatsApp Image 2023-10-03 at 00 45 06_7eddb7da](https://github.com/Daniel-Porras/Digital-1-2023-2/assets/142681600/e071edd1-b6ff-4a0d-b965-f259da956499)
+
+
 ## Simulación
 Se escribió el siguiente comando para revisar que no hubiera ningún error en el código y crear el archivo *top.vvp*
 
