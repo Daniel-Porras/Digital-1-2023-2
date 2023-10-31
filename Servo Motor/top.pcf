@@ -1,0 +1,6 @@
+set_io clk 60
+
+set_io -pullup yes sw 49 # Switch S2
+
+set_io salida 16
+
