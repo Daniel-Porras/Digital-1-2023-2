@@ -3,12 +3,8 @@ module pulsador (
     input sw,
     output reg salida
   );
-reg estados;
+
 reg[2:0] count;
-initial
-begin
-  estados=0;
-end
 
 always@(posedge clk)
 begin 
