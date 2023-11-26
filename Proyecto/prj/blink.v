@@ -1,7 +1,7 @@
 module blink (
 	input clk,
 	input setTime,
-    input [5:0] Segundos,
+        input [5:0] Segundos,
 	input [5:0] Minutos,
 	input [5:0] SegundosPulsa,
 	input [5:0] MinutosPulsa,
