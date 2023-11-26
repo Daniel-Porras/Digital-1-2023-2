@@ -9,7 +9,6 @@ module top
     output [6:0] salidaSieteSeg,
     output [4:0] Leds,
     output [3:0] SalidaMotor
-    //output NewReloj1 
   );
 parameter SIZE=6;
 reg reset=1'b0; 
