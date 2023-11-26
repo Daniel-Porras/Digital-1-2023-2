@@ -9,7 +9,6 @@ module top
     output [6:0] salidaSieteSeg,
     output [4:0] Leds,
     output [3:0] SalidaMotor
-    //output NewReloj1 
   );
 parameter SIZE=6;
 reg reset=1'b0; 
@@ -27,7 +26,6 @@ wire op;
 wire control;
 wire setTime;
 wire NewReloj200;
-//wire NewReloj1; 
 wire NewReloj50; 
 wire NewReloj5; 
 wire [3:0] Decenas;
@@ -35,7 +33,6 @@ wire [3:0] Unidades;
 wire [3:0] SalidaMux;
 
 Reloj200Hz clk200z(clk,NewReloj200);
-//Reloj1Hz clk1z(clk,NewReloj1);
 Reloj5Hz clk5z(clk,NewReloj5); 
 Reloj50Hz clk50z(clk,NewReloj50);
 
