@@ -4,7 +4,10 @@
 
 Video del funcionamiento:  https://youtu.be/ROADuwf9KhE?si=DINwa8m-Cm0rzXJX!
 
+## Formulación del Proyecto
+
 ## Lista de Materiales
+
 
 ## RTL del proyecto
 Rtl del top
