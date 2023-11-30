@@ -1,7 +1,9 @@
 # Proyecto: Alimentador automático de mascotas
-![plato](https://github.com/Daniel-Porras/Digital-1-2023-2/assets/73449036/4b51dd57-407f-4f6d-853c-efa23641d3d7)
+![platico](https://github.com/Daniel-Porras/Digital-1-2023-2/assets/142681600/486ad5eb-55fa-4fd7-8b41-cd6a3bc60194)
 
-Video del funcionamiento:  https://youtu.be/ROADuwf9KhE?si=DINwa8m-Cm0rzXJX
+
+Video del funcionamiento:  https://youtu.be/ROADuwf9KhE?si=DINwa8m-Cm0rzXJX![Uploading platico.jpg…]()
+
 ## Rtl del proyecto
 Rtl del top
 ![Captura de pantalla de 2023-11-24 16-34-23](https://github.com/Daniel-Porras/Digital-1-2023-2/assets/73449036/b8d65cd0-d815-4c5e-ae49-960ae5e1b13d)
