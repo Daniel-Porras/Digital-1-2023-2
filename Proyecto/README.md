@@ -2,7 +2,7 @@
 ![platico](https://github.com/Daniel-Porras/Digital-1-2023-2/assets/142681600/486ad5eb-55fa-4fd7-8b41-cd6a3bc60194)
 
 
-Video del funcionamiento:  https://youtu.be/ROADuwf9KhE?si=DINwa8m-Cm0rzXJX![Uploading platico.jpg…]()
+Video del funcionamiento:  https://youtu.be/ROADuwf9KhE?si=DINwa8m-Cm0rzXJX!
 
 ## Lista de Materiales
 
