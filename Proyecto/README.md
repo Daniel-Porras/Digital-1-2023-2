@@ -8,9 +8,12 @@ Video del funcionamiento:  https://youtu.be/ROADuwf9KhE?si=DINwa8m-Cm0rzXJX!
 
 ## Lista de materiales
 
-## Funcionamiento del motor paso a paso
+## Modo de funcionamiento del motor paso a paso
 
 ![WhatsApp Image 2023-11-13 at 00 37 37_3bd8fa9a](https://github.com/Daniel-Porras/Digital-1-2023-2/assets/142681600/ec41e3cc-f7ec-4acf-bf76-b84391e21c73)
+
+Para mayor profundización y explorar más modos de funcionariemto remitirse a : https://www.youtube.com/watch?v=2-nVV9S7leM 
+
 
 ## RTL del proyecto
 Rtl del top
