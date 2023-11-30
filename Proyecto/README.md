@@ -19,3 +19,8 @@ A continuación se encuentra la simulaciones de las señales de entrada (sw1, sw
 
 * **Fin del movimiento del motor y comienzo del conteo**
 ![TestTerminarDemoverElmotor](https://github.com/Daniel-Porras/Digital-1-2023-2/assets/73449036/2d21e106-714e-4980-8397-1ea7aab4182c)
+
+## Diseño 3D
+Para el montaje del alimentador se modeló un prototipo para su impresión en 3D. El software escogido para el modelado fue FreeCAD por ser un programa gretuito y open source. 
+
+![Screenshot 2023-11-29 232355](https://github.com/Daniel-Porras/Digital-1-2023-2/assets/142681600/92fa573d-dd95-4670-a1cd-68aa36a34121)
