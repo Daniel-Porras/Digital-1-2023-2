@@ -26,5 +26,8 @@ Para el montaje del alimentador se modeló un prototipo para su impresión en 3D
 ![Screenshot 2023-11-29 232355](https://github.com/Daniel-Porras/Digital-1-2023-2/assets/142681600/92fa573d-dd95-4670-a1cd-68aa36a34121)
 
 El slicer sofware escogido fue Cura con los siguientes ajustes adicionales para poder imprimir en PLA en un una impresora de extrusión directa:
+
 ![ajustes cura](https://github.com/Daniel-Porras/Digital-1-2023-2/assets/142681600/134a5c47-4f32-4540-9e9d-c44fffd422ef)
+
+El gasto de material para impresión ronda los 415g teniendo en cuenta un relleno del 5%
 
