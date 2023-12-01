@@ -91,6 +91,15 @@ El segundo problema vino a la hora de acoplar el contador con el motor, pues dad
 
 ## Funcionamiento de los displays
 
+Para diseñar el control de los displays fue necesario hacer varios cálculos con el oscilador de la FPGA, para así poder diseñar relojes con las medidas correctas para poder mostrar correcta y satisfactoriamente los contadores. Pero también se apoyó en la herramienta libre 'Digital' para diseñar circuitos de control a partir de las tablas de verdad, a continuación algunos de estos:
+
+![BinarioaBCD](https://github.com/Daniel-Porras/Digital-1-2023-2/blob/57c47155a6b28f42ec67410ed64c6c8b3cb30096/Proyecto/Capturas/BinarioaBCD.png)
+En la imagen anterior se ve el circuito en DIgital resultante de una tabla de verdad que recibe un número binario y lo transforma a código BCD, está configurado para los números del 0 al 59 para poder hacer el conteo de minutos y segundos sin problema. A partir de ese circuito se exportó el código a verilog con el propio Digital y se colocó en el código como un módulo, el código se encuentra en los archivos del repositorio.
+
+![BCDa7Segmentos](https://github.com/Daniel-Porras/Digital-1-2023-2/blob/57c47155a6b28f42ec67410ed64c6c8b3cb30096/Proyecto/Capturas/BCDa7seg.png)
+Por otro lado en la imagen arriba se ve el circuito diseñado para recibir el código BCD de dos números y mostrarlos en dos pantallas de 7 segmentos, se hace la transformación del código BCD a cada una de las salidas de los 7 leds de la pantalla. Dado que en el proyecto final tenemos 4 displays se utiliza dos veces este código para mostrar el conteo de segundos (decenas y unidades) y minutos (decenas y unidades). Un dato que cabe aclarar es que en el proyecto solo cuenta minutos y segundos dada la limitación del tiempo y que para el correcto desarrollo no era necesario llegar más lejos. Pero caso se quisiera comercializar se le agregaría el conteo de horas con otros dos displays (decenas y unidades).
+
+Es necesario mencionar, en el RTL se ven unas compuertas lógicas hacia la salida, estas son las encargadas de que cuando se pasa de modo conteo a modo configurar tiempo los numeros hagan un blink, estas puertas lógicas pudieron ser puestas en otro módulo pero se dejaron por fuera ya que se hicieron no con ayuda de digital si no diseñandolo a mano calculando uno a uno. Para posibles futuras versiones, esa zona sería un módulo más en el top.
 
 ## Modo de funcionamiento del motor paso a paso
 
@@ -101,12 +110,24 @@ Para mayor profundización y explorar más modos de funcionariemto remitirse a :
 
 Este fue el plantemiento base del que surgió la idea del control de las salidas del motor, se requieren cuatro salidas para que este funcione correctamente dado que como está diseñado su giro se da al hacer rotar un iman permanente con ayuda de electroimanes que pueden encenderse y apagarse fácilmente; en este caso y como se ve en la imágen se decidió usar un motor unipolar, dado que no compensaba en términos de consumo y potencia usar uno bipolar, con el unipolar era suficiente y más sencillo de contruir al solo necesitarse 4 señales de 1 bit en vez de 4 señales de a 2 bits.
 
+Vale la pena mencionar que como se lee en la imagen, el motor paso a paso cuenta con varias secciones, los 4 electroimanes son solo la primera y más pequeña fase de estas. Para un giro completo efectivo se necesitan 2048 pasos de estos electroimanes, para hacerlos a una velocidad y cantidad concreta requerimos el reloj que se mencionó en una sección anterior. Este hecho fue el que causó en algún momento incompatibilidad con los otros contadores, pero se resolvió recontruyendo el diseño de los displays para funcionar correctamente con el contador del paso a paso.
+
 El diseño de la señal de control y diagramas de estado del motor paso a paso se realizó en parte con ayuda de las clases magistrales donde se dieron como ejemplo varias máquinas de estado finito. En la siguiente imágen un ejemplo de esto mismo:
 
 ![Paso a Paso](https://github.com/Daniel-Porras/Digital-1-2023-2/blob/d9004c5c81d2f7cb60c9bb37002e9cc580ff8f5a/Proyecto/Capturas/Paso%20a%20paso.jpeg)
 
-Como se puede ver allí se diseñó las tablas y se obtubo las ecuaciones que describen los circuitos de control necesarios para las señales del motor. Teniendo ya la lógica de las señales que debían llegarle al motor y la lógica 
+Como se puede ver allí se diseñó las tablas y se obtubo las ecuaciones que describen los circuitos de control necesarios para las señales del motor. Teniendo ya la lógica de las señales que debían llegarle al motor y la lógica del movimiento a partir del reloj se unieron ambas cosas con tablas en digital para obtener el circuito de control y el código verilog. A continuación imagenes del proceso:
 
+En la siguiente imagen se ve la tabla que se diseñó para obtener el circuito de control correspondiente del motor. Si se compara se puede ver que tiene tanto la lógica de las 4 salidas para los electroimanes como la lógica de maquina de estado vista en imñagenes previas.
+![MotorTablas](https://github.com/Daniel-Porras/Digital-1-2023-2/blob/57c47155a6b28f42ec67410ed64c6c8b3cb30096/Proyecto/Capturas/MotorTablas.png)
+
+La siguiente imagen demuestra el circuito en funcionamiento cuando está apagado el motor, es decir cuando la señal de control que lo activa es cero. No ocurre nada, cada electrimán está apagado y el motor no se mueve bajo ninguna circunstancia.
+![MotorApagado](https://github.com/Daniel-Porras/Digital-1-2023-2/blob/57c47155a6b28f42ec67410ed64c6c8b3cb30096/Proyecto/Capturas/MotorApagado.png)
+
+La siguiente demuestra el circuito encendido, cuando la señal de control es uno. En este caso se nota como uno de los electroimanes está encendido, en cada señal de reloj pasa de uno a otro electroiman en sucesioón constante para generar el movimiento requerido.
+![MotorEncendido](https://github.com/Daniel-Porras/Digital-1-2023-2/blob/57c47155a6b28f42ec67410ed64c6c8b3cb30096/Proyecto/Capturas/MotorEncendido.png)
+
+A partir de este diseño se exportó el código a verilog y luego se hizo la labor ya descrita de configurar todo de modo que pudiera funcionar junto con los displays y contadores ya hechos.
 
 ## Simulaciones
 A continuación se encuentra la simulaciones de las señales de entrada (sw1, sw2, sw3 y el sensor ) y de salida (motor y display siete segmentos) para determinados casos.
