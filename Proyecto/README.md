@@ -129,6 +129,10 @@ La siguiente demuestra el circuito encendido, cuando la señal de control es uno
 
 A partir de este diseño se exportó el código a verilog y luego se hizo la labor ya descrita de configurar todo de modo que pudiera funcionar junto con los displays y contadores ya hechos.
 
+## Sensor de proximidad
+
+Colocar el sensor de proximidad y que funcionara con el resto del circuito fue una labor realmente sencilla, fue cosa de declarar la señal dada por el sensor y mediante if's en verilog configurar de modo que si esa señal estaba activa apagara la señal del motor, pero guardara el valor en que se encontraba de modo que la rotación no se viera afectada y aún si lo dejaban quiero varios minutos apenas tuviese camino libre volviera a moverse como si nunca se hubiese detenido. Unas cuantas pruebas fueron suficientes para acoplar esta parte al proyecto.
+
 ## Simulaciones
 A continuación se encuentra la simulaciones de las señales de entrada (sw1, sw2, sw3 y el sensor ) y de salida (motor y display siete segmentos) para determinados casos.
 * **Conteo Normal**
@@ -151,3 +155,18 @@ El slicer sofware escogido fue Cura con los siguientes ajustes adicionales para 
 
 El gasto de material para impresión ronda los 415g teniendo en cuenta un relleno del 5%
 
+Vale la pena mencionar que hubo que hacer varias pruebas e intentos de la impresión 3D hasta obtener las piezas finales, dado que el equipo no tenía experiencia en manejo de impresoras 3D al inicio algunas piezas salían con imperfecciones o deformidades, de modo que hubo que reconfigurar parámetros e intentar nuevamente hasta obtener piezas funcionales.
+
+## Montaje final 
+
+Una vez se tuvieron todas las piezas impresas a 3D como se querían se buscó montar todo el circuito. Al inicio las pruebas lógicas y de funcionamiento se hicieron únicamente con la FPGD, jumpers y protoboards; en ese montaje todo funcionaba correctamente y sin problema. Pero a la hora de montarlo a las piezas surgieron algunos problemas inesperados, uno de ellos fue que los pulsadores (que estaba planeado colocarlos en la base acoplados directamente) tuvieron que cambiarse y colocarse en una pieza aparte por problemas a la hora de conectarlos y hacerlos funcionas si se acoplaban.
+
+Uno de los mayores problemas fue que las piezas no estaban diseñadas con tamaño correcto del todo, por ejemplo, los botones se tuvieron que descartar porque no cabían en la sección destinada para estos y por esto se colocaron aparte. Otro caso similar fue con la tapa, el equipo había conseguido pequeños imanes para colocar y abrir la tapa del plato que solo deja ver uno de los compartimentos, pero ocurrió que el plato resultó más alto de lo esperado y los imanes más fuertes de lo calculado, entonces con la tapa cerrada le costaba realizar correctamente el movimiento. Pero son detalles que se dejaron pasar dado que era un prototipo y el funcionamiento general era ideal.
+
+Un problema más que se solucionó a la hora del montaje final fue la alimentación del circuito, para ello se consiguió una pequeña fuente portable que puede entregar 5V o 3.3V según se le configure, valores suficientes para el funcionamiento correcto del proyecto tal y como es visible en el video de la presentación. Hubo detalles que corregir hasta los últimos minutos pero el montaje final fue exitoso.
+
+# Conclusiones y pensamientos finales
+
+A lo largo del desarrollo de todo el proyecto surgieron distintos problemas o contratiempos derivados de situaciones que no se tuvieron en cuenta, errores de càlculos o cambios de planes. Pero aún con todo, el equipo supo sobreponerse a las distintas situaciones y resolverlas para hacer un funcionamiento óptimo del proyecto. Cada parte del proyecto se vió relacionada con la temática vista en la clase, desde la programación en verilog, la lógica combinacional en los circuitos, la lógica secuencial y el uso de Flip-Flops para las señales de control, el diseño de máquinas de estado finito que eran la base de control del motor.
+
+Además se obtubieron conocimientos con diferentes programas de software libre, tanto por sugerencia del profesor de laboratorio como por iniciativa propia, útiles para la programación, el diseño del circuito, las piezas para imprimir en 3D y las simulaciones o la conexión con la FPGA. 
