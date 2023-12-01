@@ -56,8 +56,11 @@ Para más información, aquí el primer informe con el planteamiento completo, i
 Realizando la suma de estos valores da que el gasto total para la realización del proyecto fue de $106.000 pesos aproximadamente.
 Para encontrar mayor documentación de la FPGA usada: https://lawrie.github.io/blackicemxbook/The_Hardware/The_Hardware.html
 
-##Desarrollo temprano del proyecto 
+## Desarrollo temprano del proyecto 
 
+Para los primeros diseños del proyecto de había planteado hacer con un servomotor que girara 360º, la idea era configurarlo de modo que girara una cantidad específica de grados cada vez que se quisiera hacer girar el plato; de hecho aprovechando las práctica de servomotor del laboratorio se hizo el sistema de control del servo y se implementó en la FPGA. Pero tras varios intentos por configurar el ángulo específico de giro y por consejo del profesor de laboratorio se decidió pasar a un motor paso a paso, dado que el control que requeríamos era mucho más sencillo de obtener con un paso a paso.
+
+También en un inicio se había barajado la posibilidad de hacer el alimentador similar a una máquina expendedora 
 
 ## Modo de funcionamiento del motor paso a paso
 
