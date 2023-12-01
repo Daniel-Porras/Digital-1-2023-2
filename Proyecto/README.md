@@ -56,22 +56,56 @@ Para más información, aquí el primer informe con el planteamiento completo, i
 Realizando la suma de estos valores da que el gasto total para la realización del proyecto fue de $106.000 pesos aproximadamente.
 Para encontrar mayor documentación de la FPGA usada: https://lawrie.github.io/blackicemxbook/The_Hardware/The_Hardware.html
 
+![pinout](https://github.com/Daniel-Porras/Digital-1-2023-2/blob/d9004c5c81d2f7cb60c9bb37002e9cc580ff8f5a/Proyecto/Capturas/pinout.png)
+
+En la imagen anterior se ve la distribución de pines de la FPGA para complementar las explicaciones a continuación.
+
 ## Desarrollo temprano del proyecto 
 
 Para los primeros diseños del proyecto de había planteado hacer con un servomotor que girara 360º, la idea era configurarlo de modo que girara una cantidad específica de grados cada vez que se quisiera hacer girar el plato; de hecho aprovechando las práctica de servomotor del laboratorio se hizo el sistema de control del servo y se implementó en la FPGA. Pero tras varios intentos por configurar el ángulo específico de giro y por consejo del profesor de laboratorio se decidió pasar a un motor paso a paso, dado que el control que requeríamos era mucho más sencillo de obtener con un paso a paso.
 
-También en un inicio se había barajado la posibilidad de hacer el alimentador similar a una máquina expendedora 
+También en un inicio se había barajado la posibilidad de hacer el alimentador similar a una máquina expendedora o una máquina de chicles, de modo que al cumplirse el tiempo estipulado dejara caer la comida por una abertura para llenar el plato. Pero la idea fue descartada en favor de la simplicidad y efectividad del diseño final.
+
+Un último cambio en el proceso que es digno de mencionarse es que en un momento se propuso la idea de poder controlar la máquina a distnacia, con bluetooth o wifi, pero dada la complejidad del desarrollo además de la falta de tiempo ese planteamiento solo se quedó como una idea al aire, y tal vez como una adición a futuro en caso de que se decida seguir desarrollando el proyecto o llegar a venderlo.
+
+# Proyecto Definitivo
+
+## RTL del proyecto
+Rtl del top
+![Captura de pantalla de 2023-11-24 16-34-23](https://github.com/Daniel-Porras/Digital-1-2023-2/assets/73449036/b8d65cd0-d815-4c5e-ae49-960ae5e1b13d)
+
+En la imagen anterior se la construcción mas general del circuito del proyecto final, es notable que de entradas están los distintos relojes que permiten el funcionamiento del circuito, los cuales se explicarán más adelante, y las entradas tanto del sensor como de los pulsadores. Por parte de las salidas se encuentran los leds de cada bit de lo 7 segmentos y de cada uno de los segmentos, además de la salida de control del motor.
+
+El proceso inicia con los pulsadores que pueden configurar el tiempo apoyandose en los modulos 'pulsadores' y 'selector' los cuales tienen el control sobre el estado de los pulsadores y el si la máquina se encuentra en modo conteo o modo configurar tiempo. El tiempo establecido es posible de medir gracias al modulo de ContadorTiempo, el cual permite contar los segundos e ir restando al valor del contador hasta que este sea cero, en paralelo con eso trabaja el módulo blink, que es el encargado de el display correcto en el siete segmentos. Finalmente llegan las señales al motor y los leds faltantes para completar el funcionamiento. En caso de que se reciba señal del sensor el movimiento del motor se ve interrumpido.
+
+Ahora se procederá a detallar más en varias secciones de interés respecto a los modulos y cómo se construyeron.
+
+## Relojes y contadores
+
+El diseño de los relojes que permiten el conteo del tiempo y controlan las señales de la mayor parte del proyecto se explica de forma sencilla pero conllevó un buen rato en términos de implementación. De forma básica se utiliza el oscilador de 25MHz de la FPGA como base para diseñar un contador que cuente un segundo, a partir de este se puede hacer que cuente varios segundos y luego varios minutos. Para el proyecto se utilizaron varios contadores que oscilan diferente cada segundo, esto según la conveniencia de la aplicación. Por ejemplo el contador principal cuenta con 50Hz, el contador del display es de a 20Hz, etc. 
+
+Durante el diseño del contador hubo 2 problemas principales. El primero fue a la hora de que contara e hiciera el display en el 7 segmenetos de forma correcta, pues se hicieron varias pruebas donde en un momento funcionaba y de repente se descuadraba. Hubo ocasiones que contaba mucho más ràpido o lento de lo debido, y hubo ocasiones en que el display no mostraba correctamente los números, sea por un orden incorrecto o porque no blinkeaba a una velocidad adecuada para que se viera limpio. El problema se resolvió en general con prueba y error hasta obtener un resultado satisfactorio.
+
+El segundo problema vino a la hora de acoplar el contador con el motor, pues dado que el motor requería también un reloj para su correcto movimiento como se explica más adelante este hacía interferencias con los otros contadores. Hubo alguna ocasiñon que la FPGA no soportaba tener tantos modulos de reloj al mismo tiempo y hubo que reestructurar el código para reducir la cantidad de contadores y obtener la misma funcionalidad original limpia y cuidada.
+
+
+## Funcionamiento de los displays
+
 
 ## Modo de funcionamiento del motor paso a paso
+
 
 ![WhatsApp Image 2023-11-13 at 00 37 37_3bd8fa9a](https://github.com/Daniel-Porras/Digital-1-2023-2/assets/142681600/ec41e3cc-f7ec-4acf-bf76-b84391e21c73)
 
 Para mayor profundización y explorar más modos de funcionariemto remitirse a : https://www.youtube.com/watch?v=2-nVV9S7leM 
 
+Este fue el plantemiento base del que surgió la idea del control de las salidas del motor, se requieren cuatro salidas para que este funcione correctamente dado que como está diseñado su giro se da al hacer rotar un iman permanente con ayuda de electroimanes que pueden encenderse y apagarse fácilmente; en este caso y como se ve en la imágen se decidió usar un motor unipolar, dado que no compensaba en términos de consumo y potencia usar uno bipolar, con el unipolar era suficiente y más sencillo de contruir al solo necesitarse 4 señales de 1 bit en vez de 4 señales de a 2 bits.
 
-## RTL del proyecto
-Rtl del top
-![Captura de pantalla de 2023-11-24 16-34-23](https://github.com/Daniel-Porras/Digital-1-2023-2/assets/73449036/b8d65cd0-d815-4c5e-ae49-960ae5e1b13d)
+El diseño de la señal de control y diagramas de estado del motor paso a paso se realizó en parte con ayuda de las clases magistrales donde se dieron como ejemplo varias máquinas de estado finito. En la siguiente imágen un ejemplo de esto mismo:
+
+![Paso a Paso](https://github.com/Daniel-Porras/Digital-1-2023-2/blob/d9004c5c81d2f7cb60c9bb37002e9cc580ff8f5a/Proyecto/Capturas/Paso%20a%20paso.jpeg)
+
+Como se puede ver allí se diseñó las tablas y se obtubo las ecuaciones que describen los circuitos de control necesarios para las señales del motor. Teniendo ya la lógica de las señales que debían llegarle al motor y la lógica 
 
 
 ## Simulaciones
